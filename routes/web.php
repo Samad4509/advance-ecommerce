@@ -5,6 +5,9 @@ use App\Http\Controllers\EcomarceController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\SubCategoryController;
+use App\Http\Controllers\UnitController;
+use App\Http\Controllers\BrandController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -46,5 +49,8 @@ Route::middleware(['auth:sanctum',config('jetstream.auth_session'),'verified'])-
     Route::get('/sub-category-edit/{id}',[SubCategoryController::class,'edit'])->name('Subcategory.edit');
     Route::post('/sub-category.update/{id}',[SubCategoryController::class,'update'])->name('Subcategory.update');
     Route::get('/sub-category.delete/{id}',[SubCategoryController::class,'delete'])->name('Subcategory.delete');
+
+    Route::resource('unit',UnitController::class);
+    Route::resource('brand',BrandController::class);
 
 });

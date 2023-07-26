@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\EcomarceController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\SubCategoryController;
 
 /*
 |--------------------------------------------------------------------------
@@ -37,4 +38,13 @@ Route::middleware(['auth:sanctum',config('jetstream.auth_session'),'verified'])-
     Route::get('/category-edit/{id}',[CategoryController::class,'edit'])->name('category.edit');
     Route::post('/category.update/{id}',[CategoryController::class,'update'])->name('category.update');
     Route::get('/category.delete/{id}',[CategoryController::class,'delete'])->name('category.delete');
+
+    Route::get('/sub-category-add',[SubCategoryController::class,'index'])->name('Subcategory.add');
+    Route::post('/sub-category-new',[SubCategoryController::class,'create'])->name('Subcategory.create');
+    Route::get('/sub-category-manage',[SubCategoryController::class,'manage'])->name('sub.category.manage');
+
+    Route::get('/sub-category-edit/{id}',[SubCategoryController::class,'edit'])->name('Subcategory.edit');
+    Route::post('/sub-category.update/{id}',[SubCategoryController::class,'update'])->name('Subcategory.update');
+    Route::get('/sub-category.delete/{id}',[SubCategoryController::class,'delete'])->name('Subcategory.delete');
+
 });

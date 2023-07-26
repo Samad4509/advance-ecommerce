@@ -19,6 +19,7 @@ class Category extends Model
     {
         self::$category=Category::find($id);
         self::$category->name=$request->name;
+        self::$category->status=$request->status;
         self::$category->save();
     }
     public static function deleteCategory($request,$id)

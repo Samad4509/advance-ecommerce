@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Brand;
 use Illuminate\Http\Request;
 
 class BrandController extends Controller
@@ -11,7 +12,9 @@ class BrandController extends Controller
      */
     public function index()
     {
-        //
+        return view('admin.brand.manage',[
+            'brands'=>Brand::all()
+        ]);
     }
 
     /**
@@ -27,7 +30,13 @@ class BrandController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        // $image=$request->file('name');
+        // $imageName=$image->getClientOriginalName();
+        // $driectory="image/upload";
+        // $image->move($driectory,$imageName);
+        // return $driectory.$imageName;
+        Brand::newBrand($request);
+        return back()->with('message','Brand Update Success');
     }
 
     /**
@@ -43,7 +52,9 @@ class BrandController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        return view('admin.brand.edit',[
+            'brand'=>Brand::find($id)
+        ]);
     }
 
     /**
@@ -51,7 +62,8 @@ class BrandController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        Brand::UpdateBrand($request,$id);
+        return redirect('/brand')->with('message','Brand Update Success');
     }
 
     /**
@@ -59,6 +71,7 @@ class BrandController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        Brand::deleteBrand($id);
+        return back()->with('message','Brand Delete Success');
     }
 }

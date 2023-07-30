@@ -27,41 +27,41 @@
 
                     <div class="col-lg-12 col-md-12">
                         <div class="card">
-                            <div class="card-header border-bottom">
-                                <h3 class="card-title">Sub Category  Add</h3>
-                            </div>
-                            <div class="card-body">
-                                <p class="text-center text-success">{{session('message')}}</p>
-                                <form class="needs-validation" novalidate action="{{route('Subcategory.create')}}" method="post">
-                                    @csrf
+                                <div class="card-header border-bottom">
+                                    <h3 class="card-title">Sub Category  Add</h3>
+                                </div>
+                                <div class="card-body">
+                                    <p class="text-center text-success">{{session('message')}}</p>
+                                    <form class="needs-validation" novalidate action="{{route('Subcategory.create')}}" method="post">
+                                        @csrf
 
-                                    <div class="form-row">
-                                        <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 mb-3">
-                                            <label for="validationCustom011">Category</label>
-                                            <select name="category_id" class="form-control" id="">
-                                                <option value="">Select Category</option>
-                                                @foreach($categories as $category)
-                                                    <option value="{{$category->id}}">{{$category->name}}</option>
-                                                @endforeach
-                                            </select>
+                                        <div class="form-row">
+                                            <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 mb-3">
+                                                <label for="validationCustom011">Category</label>
+                                                <select name="category_id" class="form-control" id="">
+                                                    <option value="">Select Category</option>
+                                                    @foreach($categories as $category)
+                                                        <option value="{{$category->id}}">{{$category->name}}</option>
+                                                    @endforeach
+                                                </select>
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div class="form-row">
-                                        <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 mb-3">
-                                            <label for="validationCustom011">Sub Category name</label>
-                                            <input type="text" class="form-control" name="name" id="validationCustom011" value="Mark" required>
-                                            <div class="valid-feedback">Looks good!</div>
+                                        <div class="form-row">
+                                            <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 mb-3">
+                                                <label for="validationCustom011">Sub Category name</label>
+                                                <input type="text" class="form-control" name="name" id="validationCustom011" value="" required>
+                                                <div class="valid-feedback">Looks good!</div>
+                                            </div>
                                         </div>
-                                    </div>
 
 
-                                    <button class="btn btn-primary" type="submit">Submit form</button>
-                                </form>
+                                        <button class="btn btn-primary" type="submit">Submit form</button>
+                                    </form>
+                                </div>
                             </div>
-                        </div>
                     </div>
-                    <div>
-                        <div>
-                            <div>
-                                <div>
+                </div>
+            </div>
+        </div>
+    </div>
 @endsection

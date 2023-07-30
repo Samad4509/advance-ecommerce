@@ -37,7 +37,7 @@
                                     <div class="form-row">
                                         <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 mb-3">
                                             <label for="validationCustom011">Category name</label>
-                                            <input type="text" class="form-control" name="name" id="validationCustom011" value="Mark" required>
+                                            <input type="text" class="form-control" name="name" id="validationCustom011" value="" required>
                                             <div class="valid-feedback">Looks good!</div>
                                         </div>
 

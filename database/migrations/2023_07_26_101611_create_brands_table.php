@@ -13,6 +13,10 @@ return new class extends Migration
     {
         Schema::create('brands', function (Blueprint $table) {
             $table->id();
+            $table->string('barnd_name','50')->unique();
+            $table->text('brand_image');
+            $table->string('brand_description');
+            $table->tinyInteger('status')->default(1)->comment('1=active,0=inactive');
             $table->timestamps();
         });
     }

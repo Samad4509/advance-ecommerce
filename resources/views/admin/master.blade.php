@@ -880,6 +880,8 @@
 
 <!-- SWITCHER JS -->
 <script src="{{asset('admin/assets')}}/switcher/js/switcher.js"></script>
+<script src="{{asset('admin/assets')}}/plugins/summernote-editor/summernote1.js"></script>
+<script src="{{asset('admin/assets')}}/js/summernote.js"></script>
 
 </body>
 
